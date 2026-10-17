@@ -1,0 +1,35 @@
+/* ProductDelete.css */
+
+.action-btn.delete-btn {
+    background-color: #dc3545; /* লাল রং */
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* ফন্টের লাইন হাইট ঠিক করা */
+}
+
+.action-btn.delete-btn:hover:not(:disabled) {
+    background-color: #c82333; /* ঘোর লাল */
+}
+
+/* যখন বাটন ডিসেবল থাকবে (ডিলিট চলাকালীন) */
+.action-btn.delete-btn:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* ProductList.jsx এর সাথে সামঞ্জস্য বজায় রাখতে অ্যাকশন সেলের স্টাইল */
+/* যদি ProductList.css এ actions-cell স্টাইল না থাকে তবে এটি যোগ করতে পারেন */
+/*
+.actions-cell button {
+    margin-right: 5px; 
+}
+*/

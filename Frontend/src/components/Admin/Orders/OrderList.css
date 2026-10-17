@@ -1,0 +1,219 @@
+/* ===========================
+   📦 Order List Page Design
+   =========================== */
+.order-list-root {
+  padding: 25px;
+  background-color: #f5f6fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.order-list-root h2 {
+  margin-bottom: 20px;
+  color: #2f3640;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===========================
+   📋 Table Layout
+   =========================== */
+.orders-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.orders-summary-table th,
+.orders-summary-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.orders-summary-table th {
+  background-color: #f1f2f6;
+  font-weight: 600;
+  color: #2f3640;
+}
+
+.orders-summary-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===========================
+   🖱️ Hover & Row Style
+   =========================== */
+.order-row {
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.order-row:hover {
+  background-color: #f0f8ff;
+}
+
+/* ===========================
+   🧾 Select Dropdown
+   =========================== */
+.orders-summary-table select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.orders-summary-table select:hover {
+  background-color: #f1f2f6;
+}
+
+.orders-summary-table select:focus {
+  outline: none;
+  border-color: #74b9ff;
+  box-shadow: 0 0 4px rgba(116, 185, 255, 0.5);
+}
+
+/* ===========================
+   🔽 Expanded Order Details
+   =========================== */
+.details-row td {
+  background-color: #fcfcfd;
+  border-top: 1px solid #dcdde1;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details-box {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.details-box:hover {
+  background-color: #fdfdfd;
+}
+
+.details-box .info {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.details-box .info b {
+  color: #2d3436;
+}
+
+/* ===========================
+   🧩 Inner Table (Products)
+   =========================== */
+.inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.inner-table th,
+.inner-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.inner-table th {
+  background-color: #f1f2f6;
+  font-weight: 600;
+  color: #2f3640;
+}
+
+.inner-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===========================
+   ✅ Status Colors (optional)
+   =========================== */
+select[value="Delivered"] {
+  background-color: #dff9fb;
+  color: #22a6b3;
+  font-weight: 600;
+}
+
+select[value="Cancelled"] {
+  background-color: #fab1a0;
+  color: #d63031;
+  font-weight: 600;
+}
+
+select[value="Pending"] {
+  background-color: #ffeaa7;
+  color: #6c5ce7;
+  font-weight: 600;
+}
+
+/* ===========================
+   📱 Responsive Design
+   =========================== */
+@media (max-width: 992px) {
+  .orders-summary-table th,
+  .orders-summary-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .details-box {
+    padding: 12px;
+  }
+
+  .inner-table th,
+  .inner-table td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .orders-summary-table th,
+  .orders-summary-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .order-list-root {
+    padding: 15px;
+  }
+
+  .order-list-root h2 {
+    font-size: 18px;
+  }
+
+  .inner-table th,
+  .inner-table td {
+    padding: 5px;
+  }
+}
+.order-list-root { padding: 20px; }
+.orders-summary-table { width:100%; border-collapse: collapse; }
+.orders-summary-table th, .orders-summary-table td { padding: 10px; border-bottom: 1px solid #eee; text-align:left; }
+.order-row { cursor: pointer; }
+.details-row .details-box { background:#fafafa; padding:12px; border-radius:6px; }
+.inner-table { width:100%; border-collapse: collapse; margin-top:10px; }
+.inner-table th, .inner-table td { padding:8px; border-bottom:1px solid #eee; }
+.row-cancelled { opacity:0.6; background:#fff6f6; }

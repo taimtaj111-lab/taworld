@@ -1,0 +1,4 @@
+/* Shared styles come from "Daily & Monthly Report.css" (.acc-*). Only extras here. */
+.acc-page .acc-panel select.acc-input {
+  appearance: auto;
+}

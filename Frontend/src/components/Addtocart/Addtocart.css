@@ -1,0 +1,287 @@
+/* --- Base Page Layout --- */
+.cart-page-modern {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.page-title-modern {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* --- Cart Container (List + Summary) --- */
+.cart-container-modern {
+    display: flex;
+    gap: 30px;
+}
+
+.cart-list-modern {
+    flex: 3; /* কার্ট আইটেম লিস্ট বেশি জায়গা নেবে */
+    min-width: 60%;
+}
+
+.cart-summary-modern {
+    flex: 1; /* সামারি কম জায়গা নেবে */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: fit-content; /* কন্টেন্ট অনুযায়ী উচ্চতা নেবে */
+    position: sticky; /* স্ক্রল করার সময় স্থির থাকবে */
+    top: 20px;
+}
+
+.cart-summary-modern h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.cart-summary-modern p {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+.cart-summary-modern hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.cart-summary-modern h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    color: #dc3545;
+    margin-top: 15px;
+}
+
+/* --- Cart Item Card --- */
+.cart-card-modern {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s;
+}
+
+.cart-card-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Image Styling (ছবি দেখানোর জন্য অপরিহার্য) */
+.cart-img-modern {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0; 
+    border: 1px solid #eee;
+}
+
+.cart-details-modern {
+    flex-grow: 1;
+    display: grid;
+    grid-template-areas: 
+        "name price remove"
+        "size subtotal remove"
+        "qty-control subtotal remove";
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    gap: 10px 20px;
+}
+
+.cart-details-modern h4 {
+    grid-area: name;
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.size-info {
+    grid-area: size;
+    margin: 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.price-modern {
+    grid-area: price;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff;
+    text-align: right;
+}
+
+.subtotal-modern {
+    grid-area: subtotal;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: right;
+}
+
+.subtotal-modern strong {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+/* --- Quantity Control --- */
+.qty-control-modern {
+    grid-area: qty-control;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.qty-control-modern button {
+    background: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #555;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
+
+.qty-control-modern button:hover {
+    background: #ddd;
+}
+
+.qty-control-modern span {
+    padding: 0 10px;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* --- Remove Button --- */
+.remove-item-modern {
+    grid-area: remove;
+    background: #f77;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.2s;
+    white-space: nowrap;
+    justify-self: end;
+}
+
+.remove-item-modern:hover {
+    background: #dc3545;
+}
+
+/* --- Checkout Button --- */
+.checkout-btn-modern {
+    width: 100%;
+    padding: 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+
+.checkout-btn-modern:hover {
+    background: #218838;
+}
+
+/* --- Empty Cart --- */
+.empty-cart-modern {
+    text-align: center;
+    padding: 50px 0;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+.empty-cart-modern img {
+    width: 100px;
+    opacity: 0.7;
+}
+
+.empty-cart-modern p {
+    font-size: 1.2em;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+/* --- Order History Separator (Addtocart.jsx এ ব্যবহৃত) --- */
+.history-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 40px 0;
+    border-radius: 2px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    .cart-container-modern {
+        flex-direction: column;
+    }
+
+    .cart-summary-modern {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-card-modern {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-img-modern {
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+    }
+    
+    .cart-details-modern {
+        grid-template-areas: 
+            "name name"
+            "price remove"
+            "size size"
+            "qty-control subtotal";
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .remove-item-modern {
+        justify-self: start;
+    }
+
+    .price-modern, .subtotal-modern {
+        text-align: left;
+    }
+}

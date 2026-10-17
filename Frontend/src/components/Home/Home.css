@@ -1,0 +1,86 @@
+/* D:\React-js Project\project2\src\components\Home\Home.css */
+
+/*
+* ✅ গুরুত্বপূর্ণ:
+* এই মার্জিনটি ফিক্সড Header-এর উচ্চতার সাথে সামঞ্জস্য রেখে সেট করা হয়েছে।
+* এটি নিশ্চিত করে যে হোম পেজের প্রথম এলিমেন্ট (CategoryBar) Header-এর নিচে প্রদর্শিত হবে।
+*/
+.home {
+    /* Header-এর উচ্চতার চেয়ে সামান্য বেশি মার্জিন (যেমন: Header এর padding 15px করে উপরে-নিচে আছে) */
+    padding-top: 85px; /* 60px (approx height) + 25px (additional space) */
+    min-height: 100vh;
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff6f61; /* থিম কালার */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Featured Categories Grid Design */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.category-box {
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-box:hover {
+    background-color: #ff6f61;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Special Offers Box */
+.offer-box {
+    background-color: #fce4ec; /* হালকা গোলাপী */
+    color: #ff6f61;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border: 2px dashed #ff6f61;
+}
+
+/* --- Responsive adjustments for smaller screens (Mobile) --- */
+@media (max-width: 992px) {
+    /*
+    * মোবাইল স্ক্রিনে Header এর উচ্চতা বেড়ে যায় (সার্চবার নিচে নামে)।
+    * তাই মোবাইল মেনু বন্ধ থাকলেও, Header-এর মোট উচ্চতা আনুমানিক 120-140px হবে।
+    * সঠিক রেসপনসিভ ডিজাইনের জন্য Header-এর CSS (যা পরিবর্তন করতে বারণ করা হয়েছে) দেখতে হত।
+    */
+    .home {
+        padding-top: 140px; /* মোবাইল হেডারের আনুমানিক উচ্চতা */
+    }
+
+    .section {
+        padding: 15px;
+    }
+}

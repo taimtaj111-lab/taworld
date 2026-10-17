@@ -1,0 +1,30 @@
+.register-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background: #f9f9f9;
+}
+.register-form h2 {
+  margin-bottom: 15px;
+}
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.register-form button {
+  padding: 10px 20px;
+  background: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.register-form button:hover {
+  background: #0088cc;
+}

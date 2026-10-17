@@ -1,0 +1,4 @@
+.logout-card{max-width:400px;margin:50px auto;padding:30px;background:#fff;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.15);text-align:center;}
+.logout-card button{margin:10px;padding:12px 25px;border:none;border-radius:8px;cursor:pointer;background:linear-gradient(135deg,#6a11cb,#2575fc);color:#fff;transition:0.3s;}
+.logout-card button:hover{transform:translateY(-2px);}
+@media(max-width:480px){.logout-card{padding:20px;}}

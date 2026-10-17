@@ -1,0 +1,15 @@
+.logout-btn-container {
+  text-align: center;
+  margin-top: 15px;
+}
+.logout-btn-container button {
+  padding: 8px 20px;
+  background: gray;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.logout-btn-container button:hover {
+  background: #555;
+}

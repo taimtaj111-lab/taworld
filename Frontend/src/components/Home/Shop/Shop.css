@@ -1,0 +1,16 @@
+.shop-container {
+  padding: 40px 5%;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.shop-container h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}

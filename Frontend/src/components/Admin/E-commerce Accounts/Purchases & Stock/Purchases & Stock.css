@@ -1,0 +1,8 @@
+/* Shared styles come from "Daily & Monthly Report.css" (.acc-*). Only extras here. */
+.acc-page .acc-panel select.acc-input {
+  appearance: auto;
+}
+
+.acc-page .acc-table td .acc-actions {
+  flex-wrap: nowrap;
+}

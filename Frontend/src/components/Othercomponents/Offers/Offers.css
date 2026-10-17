@@ -1,0 +1,244 @@
+/* C:\React Project\project2\src\components\Othercomponents\Offers\Offers.css */
+
+/* ======================================================== */
+/* OFFERS COMPONENT STYLING - Modern & Responsive Grid */
+/* ======================================================== */
+
+/* =============================== Grid Container =============================== */
+.product-grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Desktop */
+  gap: 20px;
+  padding: 25px 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* =============================== Offer Card =============================== */
+.offer-card {
+  background: #999999; /* Medium grey background */
+  border: 1px solid #a4794d; /* Accent border */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card:hover {
+  border-color: #602d00; /* Primary color on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* =============================== Image Wrapper =============================== */
+.offer-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.offer-main-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transition: 0.4s ease-in-out;
+}
+
+.offer-card:hover .offer-main-image {
+  transform: scale(1.05);
+}
+
+/* =============================== Discount Badge =============================== */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #602d00 !important;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 5;
+}
+
+/* =============================== Info Container =============================== */
+.offer-info-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #faf7f2;
+}
+
+.offer-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #faf7f2;
+  min-height: 40px;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+/* =============================== Rating =============================== */
+.offer-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.star-icon {
+  color: #a4794d;
+}
+
+.rating-value {
+  color: #faf7f2;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* =============================== Price =============================== */
+.offer-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.discount-price {
+  color: #faf7f2;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.regular-price {
+  color: #a4794d;
+  font-size: 15px;
+}
+
+.regular-price.discounted {
+  text-decoration: line-through;
+  color: #a4794d;
+  font-size: 14px;
+}
+
+/* =============================== Stock Info =============================== */
+.offer-stock {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #faf7f2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.out-of-stock {
+  color: #faf7f2;
+  font-weight: 700;
+}
+
+/* =============================== Add to Cart Button =============================== */
+.offer-add-to-cart-btn {
+  width: 100%;
+  padding: 12px 10px;
+  background: #602d00 !important;
+  border: 2px solid #602d00 !important;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.offer-add-to-cart-btn:hover {
+  background: #a4794d !important;
+  border-color: #a4794d !important;
+}
+
+.offer-add-to-cart-btn:disabled {
+  background: #999999 !important;
+  border-color: #999999 !important;
+  cursor: not-allowed;
+  color: #faf7f2;
+}
+
+/* =============================== Responsive Design =============================== */
+@media (max-width: 1200px) {
+  .product-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .product-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .offer-info-container {
+    padding: 10px;
+  }
+
+  .offer-name {
+    font-size: 15px;
+    min-height: 38px;
+  }
+
+  .offer-add-to-cart-btn {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px 10px;
+  }
+
+  .offer-card {
+    border-radius: 6px;
+  }
+
+  .offer-price {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .discount-price {
+    font-size: 18px;
+  }
+
+  .regular-price.discounted {
+    font-size: 13px;
+  }
+
+  .offer-name {
+    min-height: 36px;
+    margin-bottom: 4px;
+  }
+
+  .offer-add-to-cart-btn {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,160 @@
+/* C:\React Project\project2\src\components\Admin\AddProduct\AddProduct.css */
+/* ** বিদ্যমান স্টাইল ** */
+.product-admin-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.admin-dashboard-header h2 {
+    color: #333;
+}
+
+.back-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.back-btn:hover { background: #0056b3; }
+
+.product-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: white;
+}
+
+.product-form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    padding: 0 10px;
+}
+
+.product-form input:not([type="checkbox"]), 
+.product-form select, 
+.product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.product-form textarea {
+    resize: vertical;
+}
+
+.size-options-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.size-options-wrapper label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-btn:hover:not([disabled]) { background-color: #1e7e34; }
+.add-btn:disabled { background-color: #90ee90; cursor: not-allowed; }
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* ** নতুন যুক্ত করা স্টাইল (Images এবং Removal) ** */
+
+/* নির্বাচিত ছবিগুলির কন্টেইনার */
+.selected-other-images {
+    margin-top: 10px;
+    display: flex; /* ছবিগুলিকে পাশাপাশি দেখানোর জন্য */
+    flex-wrap: wrap; 
+    gap: 8px; /* ছবিগুলির মধ্যে ফাঁকা স্থান */
+}
+
+/* প্রতিটি ছবির নাম এবং বাতিলের বাটন */
+.image-tag {
+    background-color: #f0f0f0; /* হালকা ব্যাকগ্রাউন্ড */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+/* বাতিলের বাটন (X) */
+.image-tag .remove-img-btn {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    color: #d9534f; /* লাল রং */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.image-tag .remove-img-btn:hover {
+    color: #c9302c;
+}
+
+/* যখন অন্য ছবি আপলোড ইনপুট ডিসেবল থাকবে */
+input[type="file"]:disabled {
+    cursor: not-allowed;
+    background-color: #eee;
+}

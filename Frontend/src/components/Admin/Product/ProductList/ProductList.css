@@ -1,0 +1,159 @@
+/* ProductList.css */
+
+/* --- Main Container --- */
+.product-list-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.product-list-container.dashboard {
+    /* ড্যাশবোর্ডের জন্য সামান্য ছোট মার্জিন */
+    padding: 15px;
+}
+
+.recent-products-header {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- Table Styling --- */
+.product-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.product-list-table th, 
+.product-list-table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.product-list-table th {
+    background-color: #f5f5f5;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap; /* হেডার যেন না ভাঙে */
+}
+
+/* --- Image Styling --- */
+.product-image-cell {
+    width: 60px; /* থাম্বনেইলের জন্য ফিক্সড উইডথ */
+    text-align: center;
+}
+
+.product-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* --- Actions Column --- */
+.actions-cell {
+    width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid transparent;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 0 3px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 0.85em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn svg {
+    margin-right: 0;
+}
+
+.edit-btn {
+    background-color: #007bff; /* Blue */
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+.view-btn {
+    background-color: #6c757d; /* Gray */
+}
+
+.view-btn:hover {
+    background-color: #5a6268;
+}
+
+/* --- States (Loading/Error/Empty) --- */
+.product-list-loading,
+.product-list-error,
+.product-list-empty {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+
+.product-list-error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.product-list-error button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* --- View All Link (Dashboard Only) --- */
+.view-all-link-container {
+    text-align: right;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.view-all-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.view-all-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

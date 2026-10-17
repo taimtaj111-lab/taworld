@@ -1,0 +1,360 @@
+/* --- গ্যাপ সমস্যার সমাধান --- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding-top: 85px !important; /* হেডারের জন্য সঠিক জায়গা */
+}
+
+/* আপনার স্ক্রিনশটের 140px প্যাডিং রিমুভ করার জন্য */
+.home, div#root > div:nth-child(2) { 
+    padding-top: 0 !important; 
+    margin-top: 0 !important;
+}
+
+.shopme-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 10000;
+    background-color: #999999; /* ডিফল্ট কালার */
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopme-header.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+
+/* --- ১. লোগো বড় করা --- */
+.logo-img {
+    height: 55px; /* লোগো বড় করা হয়েছে */
+    width: auto;
+    transition: 0.3s;
+}
+
+/* --- ২. সার্চবার মাঝখানে আনা (Desktop) --- */
+.search-section {
+    flex: 0 1 500px; /* সার্চবার ল্যাপটপে ৫০০ পিক্সেল চওড়া হবে */
+    margin: 0 20px;
+}
+
+.modern-search {
+    display: flex;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    height: 42px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0 20px;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+}
+
+.search-btn {
+    background: #62300A;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-btn:hover { background: #4a2408; }
+
+/* --- ৩. আইকন ও নেভিগেশন --- */
+.actions-section { display: flex; align-items: center; gap: 25px; }
+.desktop-nav { display: flex; gap: 20px; }
+.desktop-nav a, .dropdown-toggle {
+    text-decoration: none;
+    color: #62300A;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.icon-group { display: flex; align-items: center; gap: 18px; }
+.icon-box {
+    font-size: 22px;
+    color: #62300A;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -8px; right: -12px;
+    background: #62300A;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* --- ৪. ড্রপডাউন ডিজাইন --- */
+.dropdown { position: relative; }
+.dropdown-menu {
+    position: absolute;
+    top: 100%; left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.dropdown-menu.show { display: block; animation: fadeIn 0.3s ease; }
+.dropdown-menu.right-align { left: auto; right: 0; }
+.dropdown-menu a, .logout-btn {
+    display: block; padding: 10px 20px;
+    color: #333; text-decoration: none; font-size: 14px;
+}
+.dropdown-menu a:hover { background: #f8f8f8; color: #62300A; }
+
+/* --- ৫. মোবাইল ও ট্যাবলেট রেসপনসিভ --- */
+@media (max-width: 992px) {
+    body { padding-top: 140px; } /* মোবাইলে দুই রো-এর জন্য বেশি প্যাডিং */
+    
+    .desktop-only, .desktop-nav { display: none; }
+    .mobile-only { display: block; padding: 0 15px 12px 15px; }
+    
+    .header-container { padding: 10px 15px; }
+    .logo-img { height: 45px; }
+    
+    .mobile-toggle { display: block; font-size: 24px; color: #62300A; cursor: pointer; }
+}
+
+@media (max-width: 480px) {
+    body { padding-top: 130px; }
+    .logo-img { height: 38px; }
+    .icon-group { gap: 12px; }
+    .icon-box { font-size: 20px; }
+}
+
+/* স্লাইড মেনু */
+.mobile-nav-overlay {
+    position: fixed; top: 0; left: -100%;
+    width: 280px; height: 100vh;
+    background: white; z-index: 10001;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 60px 25px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+}
+.mobile-nav-overlay.open { left: 0; }
+.mobile-nav-overlay a {
+    display: block; padding: 15px 0;
+    color: #321a08; font-weight: 700;
+    text-decoration: none; border-bottom: 1px solid #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* --- Reset & Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    padding-top: 80px !important; /* হেডারের উচ্চতা অনুযায়ী ফিক্স */
+}
+
+/* স্ক্রিনশটে দেখা যাওয়া ওই সাদা গ্যাপ দূর করার জন্য */
+.home, div#root > div:nth-of-type(2) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.shopme-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 9999;
+    background-color: #f1f1f1; /* লাইট ব্যাকগ্রাউন্ড */
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopme-header.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* লোগো বামে, সার্চ মাঝে, আইকন ডানে */
+    padding: 10px 20px;
+    height: 70px;
+}
+
+/* --- লোগো --- */
+.header-left { flex: 1; display: flex; align-items: center; }
+.logo-img { height: 50px; width: auto; }
+
+/* --- সার্চবার (Desktop) --- */
+.header-center { flex: 2; display: flex; justify-content: center; }
+.modern-search {
+    display: flex;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+}
+
+.search-input { flex: 1; border: none; padding: 0 15px; outline: none; font-size: 14px; }
+.search-btn { background: #62300A; color: white; border: none; padding: 0 15px; cursor: pointer; }
+
+/* --- নেভিগেশন ও আইকন (Desktop) --- */
+.header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+.desktop-nav { display: flex; gap: 15px; }
+.desktop-nav a, .dropdown-toggle { text-decoration: none; color: #62300A; font-weight: 600; font-size: 14px; }
+
+.icon-group { display: flex; align-items: center; gap: 15px; }
+.icon-box { font-size: 20px; color: #62300A; position: relative; text-decoration: none; }
+.badge {
+    position: absolute; top: -8px; right: -10px;
+    background: #62300A; color: white; font-size: 10px;
+    padding: 2px 5px; border-radius: 50%; border: 1px solid #fff;
+}
+
+/* --- মোবাইল ফিক্স --- */
+.mobile-only { display: none; }
+
+@media (max-width: 992px) {
+    body { padding-top: 130px !important; } /* মোবাইলে হেডার বড় হবে */
+    
+    .desktop-only, .desktop-nav { display: none; }
+    .mobile-only { display: block; }
+    
+    .header-inner { height: 60px; padding: 0 15px; }
+    .header-left { flex: 1; }
+    .header-right { flex: 1; }
+    
+    .logo-img { height: 40px; }
+    
+    /* মোবাইলে সার্চবার আলাদা লাইনে */
+    .mobile-search-wrapper {
+        padding: 0 15px 10px 15px;
+        width: 100%;
+    }
+    .mobile-search-wrapper .modern-search {
+        max-width: 100%;
+        border-radius: 8px; /* মোবাইলে একটু স্কয়ার লুক */
+    }
+}
+
+/* ড্রপডাউন */
+.dropdown { position: relative; }
+.dropdown-menu {
+    position: absolute; top: 100%; left: 0;
+    background: white; min-width: 160px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none; border-radius: 4px; padding: 10px 0;
+}
+.dropdown-menu.show { display: block; }
+.dropdown-menu.right-align { left: auto; right: 0; }
+.dropdown-menu a { display: block; padding: 8px 15px; color: #333; text-decoration: none; font-size: 14px; }
+
+/* স্লাইড মেনু (মোবাইল) */
+.mobile-nav-overlay {
+    position: fixed; top: 0; left: -100%;
+    width: 260px; height: 100vh;
+    background: white; z-index: 10000; transition: 0.4s;
+    padding: 60px 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+.mobile-nav-overlay.open { left: 0; }
+.mobile-nav-overlay a { display: block; padding: 12px 0; color: #62300A; font-weight: 600; text-decoration: none; border-bottom: 1px solid #eee; }
+/* Header.css */
+
+.shopme-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    
+    /* শুরুর কালার (যেমনটা আপনি স্ক্রিনশটে দিয়েছিলেন) */
+    background-color: #999999; 
+    
+    /* ট্রানজিশন শুধু ব্যাকগ্রাউন্ডে হবে */
+    transition: background-color 0.4s ease;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* স্ক্রল করার পর শুধু ব্যাকগ্রাউন্ড বদলাবে */
+.shopme-header.scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+    height: 80px; /* হাইট ফিক্সড যাতে লোগো বা মেনু না নড়ে */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* লোগো ও আইকনের সাইজ ফিক্সড রাখুন যাতে স্ক্রলে পরিবর্তন না হয় */
+.logo-img {
+    height: 55px;
+    width: auto;
+}
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.icon-btn-wrapper {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu.right-align {
+    left: auto;
+    right: 0;
+    top: 100%;
+    margin-top: 8px;
+    z-index: 10001;
+}

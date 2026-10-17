@@ -1,0 +1,14 @@
+.about-page {
+  padding: 50px;
+  text-align: center;
+}
+
+.about-page h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-page p {
+  font-size: 18px;
+  color: #555;
+}

@@ -1,0 +1,7 @@
+.auth-card{max-width:400px;margin:50px auto;padding:40px;background:#fff;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.15);text-align:center;}
+.auth-card input{width:100%;padding:12px 15px;margin:10px 0;border-radius:8px;border:1px solid #ccc;}
+.auth-card button{width:100%;padding:12px;margin-top:15px;border:none;border-radius:8px;cursor:pointer;background:linear-gradient(135deg,#6a11cb,#2575fc);color:#fff;transition:.3s;}
+.auth-card button:hover{transform:translateY(-2px);}
+.switch-btn{background:#eee;color:#333;margin-top:10px;}
+.error{color:red;margin-bottom:10px;}
+@media(max-width:480px){.auth-card{padding:30px 20px;}}

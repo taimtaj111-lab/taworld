@@ -1,0 +1,261 @@
+/* ===== E-commerce Accounts: shared styles (used by all 3 account pages) ===== */
+.acc-page {
+  padding: 4px;
+  color: #1f2937;
+}
+
+.acc-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.acc-title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.acc-loading {
+  padding: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.acc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.acc-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 5px solid #0b5ed7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.acc-card.good { border-left-color: #198754; }
+.acc-card.bad { border-left-color: #dc3545; }
+.acc-card.warn { border-left-color: #f59f00; }
+.acc-card.info { border-left-color: #6f42c1; }
+
+.acc-card-label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.acc-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.acc-card-sub {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #6b7280;
+  word-break: break-word;
+}
+
+.acc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.acc-tab {
+  padding: 9px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.acc-tab.active {
+  background: #0b5ed7;
+  border-color: #0b5ed7;
+  color: #fff;
+}
+
+.acc-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+
+.acc-panel h3 {
+  margin: 0 0 12px;
+  font-size: 17px;
+}
+
+.acc-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.acc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.acc-table th,
+.acc-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.acc-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+.acc-table tbody tr:hover { background: #f9fafb; }
+.acc-table tfoot td { font-weight: 700; background: #f3f4f6; }
+.acc-table .num { text-align: right; }
+.acc-table td.wrap { white-space: normal; min-width: 160px; }
+
+.pos { color: #198754; font-weight: 600; }
+.neg { color: #dc3545; font-weight: 600; }
+
+.acc-bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.acc-bar span {
+  display: block;
+  height: 100%;
+  background: #0b5ed7;
+}
+
+.acc-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #6b7280;
+}
+
+.acc-badge.cod { background: #198754; }
+.acc-badge.online { background: #e2136e; }
+.acc-badge.in { background: #198754; }
+.acc-badge.out { background: #dc3545; }
+.acc-badge.low { background: #f59f00; }
+.acc-badge.none { background: #dc3545; }
+.acc-badge.paid { background: #198754; }
+.acc-badge.due { background: #dc3545; }
+
+.acc-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.acc-empty {
+  padding: 30px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.acc-msg {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.acc-msg.error { background: #fde8ea; color: #b02a37; }
+.acc-msg.success { background: #e3f6ec; color: #146c43; }
+
+.acc-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.acc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.acc-field.full { grid-column: 1 / -1; }
+
+.acc-input {
+  padding: 9px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.acc-input:focus {
+  outline: none;
+  border-color: #0b5ed7;
+  box-shadow: 0 0 0 2px rgba(11, 94, 215, 0.15);
+}
+
+.acc-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.acc-btn {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #0b5ed7;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.acc-btn:hover { opacity: 0.92; }
+.acc-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.acc-btn.secondary { background: #6b7280; }
+.acc-btn.danger { background: #dc3545; }
+.acc-btn.success { background: #198754; }
+.acc-btn.small { padding: 5px 10px; font-size: 12px; }
+
+.acc-actions { display: flex; gap: 6px; }
+
+.acc-total-line {
+  grid-column: 1 / -1;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .acc-card-value { font-size: 19px; }
+  .acc-table { font-size: 13px; }
+}
